@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modifier une tâche</title>
+</head>
+<body>
+    <h1>Modifier une tâche</h1>
+
+    <!-- Formulaire pour modifier la tâche -->
+    <form method="POST">
+        <input type="text" name="task" value="{{ task }}" required>
+        <button type="submit">Mettre à jour</button>
+    </form>
+
+    <!-- Lien pour retourner à la liste -->
+    <a href="{{ url_for('index') }}">Annuler</a>
+</body>
+</html>
