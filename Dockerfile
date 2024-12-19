@@ -1,15 +1,12 @@
-FROM node:lts
+FROM python:3.9-slim
 
 WORKDIR /app
 
-COPY package*.json ./
-
-RUN npm install
+COPY requirements.txt requirements.txt
+RUN pip install -r requirements.txt
 
 COPY . .
 
-ENV PORT=6000
+EXPOSE 5000
 
-EXPOSE 6000
-
-CMD ["npm", "start"]
+CMD ["python", "app.py"]
