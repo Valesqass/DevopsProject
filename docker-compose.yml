@@ -2,20 +2,19 @@ version: '3.8'
 
 services:
   web:
-    build: .
+    build: .  
     ports:
-      - "5001:5000"
-    volumes:
-      - .:/app
+      - "5000:5000"  
     depends_on:
-      - db
+      - db  
 
   db:
-    image: mongo:latest
+    image: mongo  
     ports:
-      - "27017:27017"
+      - "27017:27017"  
     volumes:
-      - mongo-data:/data/db
+      - mongo-data:/data/db  
 
 volumes:
   mongo-data:
+    driver: local  
